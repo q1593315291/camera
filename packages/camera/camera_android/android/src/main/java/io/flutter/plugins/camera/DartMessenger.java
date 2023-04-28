@@ -201,6 +201,8 @@ public class DartMessenger {
       String errorCode,
       @Nullable String errorMessage,
       @Nullable Object errorDetails) {
-    handler.post(() -> result.error(errorCode, errorMessage, errorDetails));
+    if(result!=null){
+      handler.post(() -> result.error(errorCode, errorMessage, errorDetails));
+    }
   }
 }
